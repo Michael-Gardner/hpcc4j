@@ -11,10 +11,10 @@ import java.util.Map;
 
 import org.hpccsystems.ws.client.gen.ecldirect.v1_0.ArrayOfEspException;
 import org.hpccsystems.ws.client.gen.ecldirect.v1_0.EspException;
-import org.hpccsystems.ws.client.gen.filespray.v1_06.DropZone;
-import org.hpccsystems.ws.client.gen.filespray.v1_06.DropZoneFilesRequest;
-import org.hpccsystems.ws.client.gen.filespray.v1_06.DropZoneFilesResponse;
-import org.hpccsystems.ws.client.gen.filespray.v1_06.PhysicalFileStruct;
+import org.hpccsystems.ws.client.gen.filespray.v1_12.DropZone;
+import org.hpccsystems.ws.client.gen.filespray.v1_12.DropZoneFilesRequest;
+import org.hpccsystems.ws.client.gen.filespray.v1_12.DropZoneFilesResponse;
+import org.hpccsystems.ws.client.gen.filespray.v1_12.PhysicalFileStruct;
 import org.hpccsystems.ws.client.HPCCECLDirectClient;
 import org.hpccsystems.ws.client.HPCCFileSprayClient;
 import org.hpccsystems.ws.client.HPCCWsClient;
@@ -831,10 +831,10 @@ public class RDFHPCCWsClient extends HPCCWsClient
                 }
             }
         }
-        catch (org.hpccsystems.ws.client.gen.filespray.v1_06.ArrayOfEspException e1)
+        catch (org.hpccsystems.ws.client.gen.filespray.v1_12.ArrayOfEspException e1)
         {
             Utils.println(System.out, "ERROR: Attempting to fetch HPCC dropzone Info:", false, verbosemode);
-            for (org.hpccsystems.ws.client.gen.filespray.v1_06.EspException exception : e1.getException())
+            for (org.hpccsystems.ws.client.gen.filespray.v1_12.EspException exception : e1.getException())
             {
                 Utils.println(System.out, "\t"+exception.getMessage(), false, verbosemode);
             }

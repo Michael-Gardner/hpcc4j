@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.hpccsystems.ws.client.HPCCWsDFUClient;
-import org.hpccsystems.ws.client.gen.filespray.v1_06.PhysicalFileStruct;
+import org.hpccsystems.ws.client.gen.filespray.v1_12.PhysicalFileStruct;
 import org.hpccsystems.ws.client.gen.wsdfu.v1_32.DFUFileDetail;
 import org.hpccsystems.ws.client.gen.wsdfu.v1_32.DFUInfoResponse;
 import org.hpccsystems.ws.client.gen.wsdfu.v1_32.DFULogicalFile;
