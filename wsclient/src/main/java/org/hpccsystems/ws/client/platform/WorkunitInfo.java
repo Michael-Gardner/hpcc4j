@@ -1,11 +1,11 @@
 package org.hpccsystems.ws.client.platform;
 
 import org.hpccsystems.ws.client.HPCCWsWorkUnitsClient;
-import org.hpccsystems.ws.client.gen.wsworkunits.v1_46.ECLQuery;
-import org.hpccsystems.ws.client.gen.wsworkunits.v1_46.NamedValue;
+import org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLQuery;
+import org.hpccsystems.ws.client.gen.wsworkunits.v1_56.NamedValue;
 
 // This class wraps the generated soap ECL Workunit, providing comparable and to-string methods for end-users.
-public class WorkunitInfo extends org.hpccsystems.ws.client.gen.wsworkunits.v1_46.ECLWorkunit implements
+public class WorkunitInfo extends org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit implements
         Comparable<org.hpccsystems.ws.client.platform.WorkunitInfo>
 {
     private int               maxMonitorTime   = HPCCWsWorkUnitsClient.defaultMaxWaitTime;
@@ -18,7 +18,7 @@ public class WorkunitInfo extends org.hpccsystems.ws.client.gen.wsworkunits.v1_4
      * 
      * @param base
      */
-    public WorkunitInfo(org.hpccsystems.ws.client.gen.wsworkunits.v1_46.ECLWorkunit base)
+    public WorkunitInfo(org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit base)
     {
         copy(base);
     }
@@ -103,7 +103,7 @@ public class WorkunitInfo extends org.hpccsystems.ws.client.gen.wsworkunits.v1_4
      * 
      * @param base
      */
-    private void copy(org.hpccsystems.ws.client.gen.wsworkunits.v1_46.ECLWorkunit base)
+    private void copy(org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit base)
     {
         if (base == null)
         {
@@ -162,7 +162,7 @@ public class WorkunitInfo extends org.hpccsystems.ws.client.gen.wsworkunits.v1_4
         this.setArchived(base.getArchived());
     }
 
-    public boolean update(org.hpccsystems.ws.client.gen.wsworkunits.v1_46.ECLWorkunit wu)
+    public boolean update(org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit wu)
     {
         boolean retVal = false;
         if (wu != null && this.getWuid().equals(wu.getWuid()) && !this.equals(wu))
@@ -176,7 +176,7 @@ public class WorkunitInfo extends org.hpccsystems.ws.client.gen.wsworkunits.v1_4
         return retVal;
     }
 
-    synchronized boolean updateState(org.hpccsystems.ws.client.gen.wsworkunits.v1_46.ECLWorkunit wu)
+    synchronized boolean updateState(org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit wu)
     {
         boolean retVal = false;
         if (wu != null && this.getWuid().equals(wu.getWuid()))// && this.compareTo(wu))
