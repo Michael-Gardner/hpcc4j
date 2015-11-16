@@ -26,7 +26,7 @@ import org.hpccsystems.ws.client.HPCCWsTopologyClient;
 import org.hpccsystems.ws.client.HPCCWsWorkUnitsClient;
 import org.hpccsystems.ws.client.gen.filespray.v1_06.DFUWorkunit;
 import org.hpccsystems.ws.client.gen.filespray.v1_06.GetDFUWorkunitsResponse;
-import org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFULogicalFile;
+import org.hpccsystems.ws.client.gen.wsdfu.v1_32.DFULogicalFile;
 import org.hpccsystems.ws.client.gen.wstopology.v1_22.TpDropZone;
 import org.hpccsystems.ws.client.gen.wstopology.v1_22.TpLogicalCluster;
 import org.hpccsystems.ws.client.gen.wstopology.v1_22.TpServices;
