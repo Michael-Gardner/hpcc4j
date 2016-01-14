@@ -28,6 +28,8 @@ public class DFUDataColumn  implements java.io.Serializable {
 
     private java.lang.Boolean isKeyedColumn;
 
+    private org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUDataColumn[] dataColumns;
+
     public DFUDataColumn() {
     }
 
@@ -41,7 +43,8 @@ public class DFUDataColumn  implements java.io.Serializable {
            java.lang.String columnEclType,
            java.lang.Integer columnRawSize,
            java.lang.Boolean isNaturalColumn,
-           java.lang.Boolean isKeyedColumn) {
+           java.lang.Boolean isKeyedColumn,
+           org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUDataColumn[] dataColumns) {
            this.columnID = columnID;
            this.columnLabel = columnLabel;
            this.columnType = columnType;
@@ -52,6 +55,7 @@ public class DFUDataColumn  implements java.io.Serializable {
            this.columnRawSize = columnRawSize;
            this.isNaturalColumn = isNaturalColumn;
            this.isKeyedColumn = isKeyedColumn;
+           this.dataColumns = dataColumns;
     }
 
 
@@ -254,6 +258,26 @@ public class DFUDataColumn  implements java.io.Serializable {
         this.isKeyedColumn = isKeyedColumn;
     }
 
+
+    /**
+     * Gets the dataColumns value for this DFUDataColumn.
+     * 
+     * @return dataColumns
+     */
+    public org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUDataColumn[] getDataColumns() {
+        return dataColumns;
+    }
+
+
+    /**
+     * Sets the dataColumns value for this DFUDataColumn.
+     * 
+     * @param dataColumns
+     */
+    public void setDataColumns(org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUDataColumn[] dataColumns) {
+        this.dataColumns = dataColumns;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DFUDataColumn)) return false;
@@ -295,7 +319,10 @@ public class DFUDataColumn  implements java.io.Serializable {
               this.isNaturalColumn.equals(other.getIsNaturalColumn()))) &&
             ((this.isKeyedColumn==null && other.getIsKeyedColumn()==null) || 
              (this.isKeyedColumn!=null &&
-              this.isKeyedColumn.equals(other.getIsKeyedColumn())));
+              this.isKeyedColumn.equals(other.getIsKeyedColumn()))) &&
+            ((this.dataColumns==null && other.getDataColumns()==null) || 
+             (this.dataColumns!=null &&
+              java.util.Arrays.equals(this.dataColumns, other.getDataColumns())));
         __equalsCalc = null;
         return _equals;
     }
@@ -336,6 +363,17 @@ public class DFUDataColumn  implements java.io.Serializable {
         }
         if (getIsKeyedColumn() != null) {
             _hashCode += getIsKeyedColumn().hashCode();
+        }
+        if (getDataColumns() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getDataColumns());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getDataColumns(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -416,6 +454,14 @@ public class DFUDataColumn  implements java.io.Serializable {
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dataColumns");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DataColumns"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUDataColumn"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        elemField.setItemQName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUDataColumn"));
         typeDesc.addFieldDesc(elemField);
     }
 

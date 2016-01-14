@@ -58,6 +58,10 @@ public class DFULogicalFile  implements java.io.Serializable {
 
     private java.lang.Long compressedFileSize;
 
+    private java.lang.String superOwners;
+
+    private java.lang.Boolean persistent;
+
     public DFULogicalFile() {
     }
 
@@ -86,7 +90,9 @@ public class DFULogicalFile  implements java.io.Serializable {
            java.lang.Boolean isKeyFile,
            java.lang.Boolean isCompressed,
            java.lang.String contentType,
-           java.lang.Long compressedFileSize) {
+           java.lang.Long compressedFileSize,
+           java.lang.String superOwners,
+           java.lang.Boolean persistent) {
            this.prefix = prefix;
            this.clusterName = clusterName;
            this.nodeGroup = nodeGroup;
@@ -112,6 +118,8 @@ public class DFULogicalFile  implements java.io.Serializable {
            this.isCompressed = isCompressed;
            this.contentType = contentType;
            this.compressedFileSize = compressedFileSize;
+           this.superOwners = superOwners;
+           this.persistent = persistent;
     }
 
 
@@ -614,6 +622,46 @@ public class DFULogicalFile  implements java.io.Serializable {
         this.compressedFileSize = compressedFileSize;
     }
 
+
+    /**
+     * Gets the superOwners value for this DFULogicalFile.
+     * 
+     * @return superOwners
+     */
+    public java.lang.String getSuperOwners() {
+        return superOwners;
+    }
+
+
+    /**
+     * Sets the superOwners value for this DFULogicalFile.
+     * 
+     * @param superOwners
+     */
+    public void setSuperOwners(java.lang.String superOwners) {
+        this.superOwners = superOwners;
+    }
+
+
+    /**
+     * Gets the persistent value for this DFULogicalFile.
+     * 
+     * @return persistent
+     */
+    public java.lang.Boolean getPersistent() {
+        return persistent;
+    }
+
+
+    /**
+     * Sets the persistent value for this DFULogicalFile.
+     * 
+     * @param persistent
+     */
+    public void setPersistent(java.lang.Boolean persistent) {
+        this.persistent = persistent;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DFULogicalFile)) return false;
@@ -700,7 +748,13 @@ public class DFULogicalFile  implements java.io.Serializable {
               this.contentType.equals(other.getContentType()))) &&
             ((this.compressedFileSize==null && other.getCompressedFileSize()==null) || 
              (this.compressedFileSize!=null &&
-              this.compressedFileSize.equals(other.getCompressedFileSize())));
+              this.compressedFileSize.equals(other.getCompressedFileSize()))) &&
+            ((this.superOwners==null && other.getSuperOwners()==null) || 
+             (this.superOwners!=null &&
+              this.superOwners.equals(other.getSuperOwners()))) &&
+            ((this.persistent==null && other.getPersistent()==null) || 
+             (this.persistent!=null &&
+              this.persistent.equals(other.getPersistent())));
         __equalsCalc = null;
         return _equals;
     }
@@ -786,6 +840,12 @@ public class DFULogicalFile  implements java.io.Serializable {
         }
         if (getCompressedFileSize() != null) {
             _hashCode += getCompressedFileSize().hashCode();
+        }
+        if (getSuperOwners() != null) {
+            _hashCode += getSuperOwners().hashCode();
+        }
+        if (getPersistent() != null) {
+            _hashCode += getPersistent().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -969,6 +1029,20 @@ public class DFULogicalFile  implements java.io.Serializable {
         elemField.setFieldName("compressedFileSize");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "CompressedFileSize"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("superOwners");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "SuperOwners"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("persistent");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Persistent"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

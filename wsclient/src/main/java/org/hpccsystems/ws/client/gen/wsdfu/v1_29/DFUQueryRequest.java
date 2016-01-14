@@ -12,6 +12,8 @@ public class DFUQueryRequest  implements java.io.Serializable {
 
     private java.lang.String nodeGroup;
 
+    private java.lang.String contentType;
+
     private java.lang.String logicalName;
 
     private java.lang.String description;
@@ -42,12 +44,17 @@ public class DFUQueryRequest  implements java.io.Serializable {
 
     private java.lang.Long cacheHint;
 
+    private java.lang.Integer maxNumberOfFiles;
+
+    private java.lang.Boolean includeSuperOwner;
+
     public DFUQueryRequest() {
     }
 
     public DFUQueryRequest(
            java.lang.String prefix,
            java.lang.String nodeGroup,
+           java.lang.String contentType,
            java.lang.String logicalName,
            java.lang.String description,
            java.lang.String owner,
@@ -62,9 +69,12 @@ public class DFUQueryRequest  implements java.io.Serializable {
            java.lang.String sortby,
            java.lang.Boolean descending,
            java.lang.Boolean oneLevelDirFileReturn,
-           java.lang.Long cacheHint) {
+           java.lang.Long cacheHint,
+           java.lang.Integer maxNumberOfFiles,
+           java.lang.Boolean includeSuperOwner) {
            this.prefix = prefix;
            this.nodeGroup = nodeGroup;
+           this.contentType = contentType;
            this.logicalName = logicalName;
            this.description = description;
            this.owner = owner;
@@ -80,6 +90,8 @@ public class DFUQueryRequest  implements java.io.Serializable {
            this.descending = descending;
            this.oneLevelDirFileReturn = oneLevelDirFileReturn;
            this.cacheHint = cacheHint;
+           this.maxNumberOfFiles = maxNumberOfFiles;
+           this.includeSuperOwner = includeSuperOwner;
     }
 
 
@@ -120,6 +132,26 @@ public class DFUQueryRequest  implements java.io.Serializable {
      */
     public void setNodeGroup(java.lang.String nodeGroup) {
         this.nodeGroup = nodeGroup;
+    }
+
+
+    /**
+     * Gets the contentType value for this DFUQueryRequest.
+     * 
+     * @return contentType
+     */
+    public java.lang.String getContentType() {
+        return contentType;
+    }
+
+
+    /**
+     * Sets the contentType value for this DFUQueryRequest.
+     * 
+     * @param contentType
+     */
+    public void setContentType(java.lang.String contentType) {
+        this.contentType = contentType;
     }
 
 
@@ -422,6 +454,46 @@ public class DFUQueryRequest  implements java.io.Serializable {
         this.cacheHint = cacheHint;
     }
 
+
+    /**
+     * Gets the maxNumberOfFiles value for this DFUQueryRequest.
+     * 
+     * @return maxNumberOfFiles
+     */
+    public java.lang.Integer getMaxNumberOfFiles() {
+        return maxNumberOfFiles;
+    }
+
+
+    /**
+     * Sets the maxNumberOfFiles value for this DFUQueryRequest.
+     * 
+     * @param maxNumberOfFiles
+     */
+    public void setMaxNumberOfFiles(java.lang.Integer maxNumberOfFiles) {
+        this.maxNumberOfFiles = maxNumberOfFiles;
+    }
+
+
+    /**
+     * Gets the includeSuperOwner value for this DFUQueryRequest.
+     * 
+     * @return includeSuperOwner
+     */
+    public java.lang.Boolean getIncludeSuperOwner() {
+        return includeSuperOwner;
+    }
+
+
+    /**
+     * Sets the includeSuperOwner value for this DFUQueryRequest.
+     * 
+     * @param includeSuperOwner
+     */
+    public void setIncludeSuperOwner(java.lang.Boolean includeSuperOwner) {
+        this.includeSuperOwner = includeSuperOwner;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DFUQueryRequest)) return false;
@@ -440,6 +512,9 @@ public class DFUQueryRequest  implements java.io.Serializable {
             ((this.nodeGroup==null && other.getNodeGroup()==null) || 
              (this.nodeGroup!=null &&
               this.nodeGroup.equals(other.getNodeGroup()))) &&
+            ((this.contentType==null && other.getContentType()==null) || 
+             (this.contentType!=null &&
+              this.contentType.equals(other.getContentType()))) &&
             ((this.logicalName==null && other.getLogicalName()==null) || 
              (this.logicalName!=null &&
               this.logicalName.equals(other.getLogicalName()))) &&
@@ -484,7 +559,13 @@ public class DFUQueryRequest  implements java.io.Serializable {
               this.oneLevelDirFileReturn.equals(other.getOneLevelDirFileReturn()))) &&
             ((this.cacheHint==null && other.getCacheHint()==null) || 
              (this.cacheHint!=null &&
-              this.cacheHint.equals(other.getCacheHint())));
+              this.cacheHint.equals(other.getCacheHint()))) &&
+            ((this.maxNumberOfFiles==null && other.getMaxNumberOfFiles()==null) || 
+             (this.maxNumberOfFiles!=null &&
+              this.maxNumberOfFiles.equals(other.getMaxNumberOfFiles()))) &&
+            ((this.includeSuperOwner==null && other.getIncludeSuperOwner()==null) || 
+             (this.includeSuperOwner!=null &&
+              this.includeSuperOwner.equals(other.getIncludeSuperOwner())));
         __equalsCalc = null;
         return _equals;
     }
@@ -501,6 +582,9 @@ public class DFUQueryRequest  implements java.io.Serializable {
         }
         if (getNodeGroup() != null) {
             _hashCode += getNodeGroup().hashCode();
+        }
+        if (getContentType() != null) {
+            _hashCode += getContentType().hashCode();
         }
         if (getLogicalName() != null) {
             _hashCode += getLogicalName().hashCode();
@@ -547,6 +631,12 @@ public class DFUQueryRequest  implements java.io.Serializable {
         if (getCacheHint() != null) {
             _hashCode += getCacheHint().hashCode();
         }
+        if (getMaxNumberOfFiles() != null) {
+            _hashCode += getMaxNumberOfFiles().hashCode();
+        }
+        if (getIncludeSuperOwner() != null) {
+            _hashCode += getIncludeSuperOwner().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -567,6 +657,13 @@ public class DFUQueryRequest  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("nodeGroup");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "NodeGroup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("contentType");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ContentType"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
@@ -673,6 +770,20 @@ public class DFUQueryRequest  implements java.io.Serializable {
         elemField.setFieldName("cacheHint");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "CacheHint"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("maxNumberOfFiles");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "MaxNumberOfFiles"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeSuperOwner");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "IncludeSuperOwner"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

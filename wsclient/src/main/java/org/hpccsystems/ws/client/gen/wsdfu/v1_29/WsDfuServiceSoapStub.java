@@ -35,7 +35,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -52,7 +52,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -69,7 +69,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -86,7 +86,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -103,7 +103,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -120,7 +120,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -137,7 +137,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -154,7 +154,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -171,7 +171,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -188,7 +188,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -210,7 +210,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -227,7 +227,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -244,7 +244,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -261,7 +261,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -278,7 +278,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -295,7 +295,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -312,7 +312,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         oper.addFault(new org.apache.axis.description.FaultDesc(
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Exceptions"),
-                      "org.hpccsystems.ws.client.gen.wsdfu.v1_29.ArrayOfEspException",
+                      "wsdfu.ws.hpccsystems.ArrayOfEspException",
                       new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "ArrayOfEspException"), 
                       true
                      ));
@@ -355,6 +355,15 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
             qName2 = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "SubfileName");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", ">>DFUArrayActionResponse>DFUArrayActionResult");
+            cachedSerQNames.add(qName);
+            cls = org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayMessage[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUArrayMessage");
+            qName2 = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Message");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -709,6 +718,20 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUArrayActions");
+            cachedSerQNames.add(qName);
+            cls = org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayActions.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUArrayMessage");
+            cachedSerQNames.add(qName);
+            cls = org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayMessage.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUDataColumn");
             cachedSerQNames.add(qName);
             cls = org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUDataColumn.class;
@@ -847,7 +870,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[0]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/Add?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/Add?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -889,7 +912,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[1]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/AddRemote?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/AddRemote?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -931,7 +954,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[2]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/AddtoSuperfile?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/AddtoSuperfile?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -973,7 +996,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUArrayAction?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUArrayAction?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1015,7 +1038,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUBrowseData?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUBrowseData?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1057,7 +1080,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUDefFile?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUDefFile?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1099,7 +1122,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[6]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUFileView?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUFileView?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1141,7 +1164,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUGetDataColumns?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUGetDataColumns?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1183,7 +1206,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[8]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUGetFileMetaData?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUGetFileMetaData?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1225,7 +1248,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[9]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUInfo?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUInfo?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1267,7 +1290,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[10]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUQuery?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUQuery?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1309,7 +1332,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[11]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUSearch?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUSearch?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1351,7 +1374,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUSearchData?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUSearchData?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1393,7 +1416,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[13]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/DFUSpace?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/DFUSpace?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1435,7 +1458,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[14]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/Savexml?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/Savexml?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1477,7 +1500,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[15]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/SuperfileAction?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/SuperfileAction?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
@@ -1519,7 +1542,7 @@ public class WsDfuServiceSoapStub extends org.apache.axis.client.Stub implements
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[16]);
         _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("WsDfu/SuperfileList?ver_=1.29");
+        _call.setSOAPActionURI("WsDfu/SuperfileList?ver_=1.32");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);

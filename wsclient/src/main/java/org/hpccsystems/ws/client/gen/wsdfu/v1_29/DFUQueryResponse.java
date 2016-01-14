@@ -60,6 +60,10 @@ public class DFUQueryResponse  implements java.io.Serializable {
 
     private java.lang.Long cacheHint;
 
+    private java.lang.Boolean isSubsetOfFiles;
+
+    private java.lang.String warning;
+
     public DFUQueryResponse() {
     }
 
@@ -89,7 +93,9 @@ public class DFUQueryResponse  implements java.io.Serializable {
            java.lang.String basicQuery,
            java.lang.String parametersForPaging,
            java.lang.String filters,
-           java.lang.Long cacheHint) {
+           java.lang.Long cacheHint,
+           java.lang.Boolean isSubsetOfFiles,
+           java.lang.String warning) {
            this.exceptions = exceptions;
            this.DFULogicalFiles = DFULogicalFiles;
            this.prefix = prefix;
@@ -116,6 +122,8 @@ public class DFUQueryResponse  implements java.io.Serializable {
            this.parametersForPaging = parametersForPaging;
            this.filters = filters;
            this.cacheHint = cacheHint;
+           this.isSubsetOfFiles = isSubsetOfFiles;
+           this.warning = warning;
     }
 
 
@@ -638,6 +646,46 @@ public class DFUQueryResponse  implements java.io.Serializable {
         this.cacheHint = cacheHint;
     }
 
+
+    /**
+     * Gets the isSubsetOfFiles value for this DFUQueryResponse.
+     * 
+     * @return isSubsetOfFiles
+     */
+    public java.lang.Boolean getIsSubsetOfFiles() {
+        return isSubsetOfFiles;
+    }
+
+
+    /**
+     * Sets the isSubsetOfFiles value for this DFUQueryResponse.
+     * 
+     * @param isSubsetOfFiles
+     */
+    public void setIsSubsetOfFiles(java.lang.Boolean isSubsetOfFiles) {
+        this.isSubsetOfFiles = isSubsetOfFiles;
+    }
+
+
+    /**
+     * Gets the warning value for this DFUQueryResponse.
+     * 
+     * @return warning
+     */
+    public java.lang.String getWarning() {
+        return warning;
+    }
+
+
+    /**
+     * Sets the warning value for this DFUQueryResponse.
+     * 
+     * @param warning
+     */
+    public void setWarning(java.lang.String warning) {
+        this.warning = warning;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DFUQueryResponse)) return false;
@@ -727,7 +775,13 @@ public class DFUQueryResponse  implements java.io.Serializable {
               this.filters.equals(other.getFilters()))) &&
             ((this.cacheHint==null && other.getCacheHint()==null) || 
              (this.cacheHint!=null &&
-              this.cacheHint.equals(other.getCacheHint())));
+              this.cacheHint.equals(other.getCacheHint()))) &&
+            ((this.isSubsetOfFiles==null && other.getIsSubsetOfFiles()==null) || 
+             (this.isSubsetOfFiles!=null &&
+              this.isSubsetOfFiles.equals(other.getIsSubsetOfFiles()))) &&
+            ((this.warning==null && other.getWarning()==null) || 
+             (this.warning!=null &&
+              this.warning.equals(other.getWarning())));
         __equalsCalc = null;
         return _equals;
     }
@@ -824,6 +878,12 @@ public class DFUQueryResponse  implements java.io.Serializable {
         }
         if (getCacheHint() != null) {
             _hashCode += getCacheHint().hashCode();
+        }
+        if (getIsSubsetOfFiles() != null) {
+            _hashCode += getIsSubsetOfFiles().hashCode();
+        }
+        if (getWarning() != null) {
+            _hashCode += getWarning().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -1015,6 +1075,20 @@ public class DFUQueryResponse  implements java.io.Serializable {
         elemField.setFieldName("cacheHint");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "CacheHint"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("isSubsetOfFiles");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "IsSubsetOfFiles"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("warning");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Warning"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

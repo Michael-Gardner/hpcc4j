@@ -8,7 +8,7 @@
 package org.hpccsystems.ws.client.gen.wsdfu.v1_29;
 
 public class DFUArrayActionRequest  implements java.io.Serializable {
-    private java.lang.String type;
+    private org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayActions type;
 
     private java.lang.Boolean noDelete;
 
@@ -16,18 +16,30 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
 
     private java.lang.String[] logicalFiles;
 
+    private java.lang.Boolean removeFromSuperfiles;
+
+    private java.lang.Boolean removeRecursively;
+
+    private java.lang.Boolean encodeDFUArrayActionResult;
+
     public DFUArrayActionRequest() {
     }
 
     public DFUArrayActionRequest(
-           java.lang.String type,
+           org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayActions type,
            java.lang.Boolean noDelete,
            java.lang.String backToPage,
-           java.lang.String[] logicalFiles) {
+           java.lang.String[] logicalFiles,
+           java.lang.Boolean removeFromSuperfiles,
+           java.lang.Boolean removeRecursively,
+           java.lang.Boolean encodeDFUArrayActionResult) {
            this.type = type;
            this.noDelete = noDelete;
            this.backToPage = backToPage;
            this.logicalFiles = logicalFiles;
+           this.removeFromSuperfiles = removeFromSuperfiles;
+           this.removeRecursively = removeRecursively;
+           this.encodeDFUArrayActionResult = encodeDFUArrayActionResult;
     }
 
 
@@ -36,7 +48,7 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
      * 
      * @return type
      */
-    public java.lang.String getType() {
+    public org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayActions getType() {
         return type;
     }
 
@@ -46,7 +58,7 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
      * 
      * @param type
      */
-    public void setType(java.lang.String type) {
+    public void setType(org.hpccsystems.ws.client.gen.wsdfu.v1_29.DFUArrayActions type) {
         this.type = type;
     }
 
@@ -110,6 +122,66 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
         this.logicalFiles = logicalFiles;
     }
 
+
+    /**
+     * Gets the removeFromSuperfiles value for this DFUArrayActionRequest.
+     * 
+     * @return removeFromSuperfiles
+     */
+    public java.lang.Boolean getRemoveFromSuperfiles() {
+        return removeFromSuperfiles;
+    }
+
+
+    /**
+     * Sets the removeFromSuperfiles value for this DFUArrayActionRequest.
+     * 
+     * @param removeFromSuperfiles
+     */
+    public void setRemoveFromSuperfiles(java.lang.Boolean removeFromSuperfiles) {
+        this.removeFromSuperfiles = removeFromSuperfiles;
+    }
+
+
+    /**
+     * Gets the removeRecursively value for this DFUArrayActionRequest.
+     * 
+     * @return removeRecursively
+     */
+    public java.lang.Boolean getRemoveRecursively() {
+        return removeRecursively;
+    }
+
+
+    /**
+     * Sets the removeRecursively value for this DFUArrayActionRequest.
+     * 
+     * @param removeRecursively
+     */
+    public void setRemoveRecursively(java.lang.Boolean removeRecursively) {
+        this.removeRecursively = removeRecursively;
+    }
+
+
+    /**
+     * Gets the encodeDFUArrayActionResult value for this DFUArrayActionRequest.
+     * 
+     * @return encodeDFUArrayActionResult
+     */
+    public java.lang.Boolean getEncodeDFUArrayActionResult() {
+        return encodeDFUArrayActionResult;
+    }
+
+
+    /**
+     * Sets the encodeDFUArrayActionResult value for this DFUArrayActionRequest.
+     * 
+     * @param encodeDFUArrayActionResult
+     */
+    public void setEncodeDFUArrayActionResult(java.lang.Boolean encodeDFUArrayActionResult) {
+        this.encodeDFUArrayActionResult = encodeDFUArrayActionResult;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof DFUArrayActionRequest)) return false;
@@ -133,7 +205,16 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
               this.backToPage.equals(other.getBackToPage()))) &&
             ((this.logicalFiles==null && other.getLogicalFiles()==null) || 
              (this.logicalFiles!=null &&
-              java.util.Arrays.equals(this.logicalFiles, other.getLogicalFiles())));
+              java.util.Arrays.equals(this.logicalFiles, other.getLogicalFiles()))) &&
+            ((this.removeFromSuperfiles==null && other.getRemoveFromSuperfiles()==null) || 
+             (this.removeFromSuperfiles!=null &&
+              this.removeFromSuperfiles.equals(other.getRemoveFromSuperfiles()))) &&
+            ((this.removeRecursively==null && other.getRemoveRecursively()==null) || 
+             (this.removeRecursively!=null &&
+              this.removeRecursively.equals(other.getRemoveRecursively()))) &&
+            ((this.encodeDFUArrayActionResult==null && other.getEncodeDFUArrayActionResult()==null) || 
+             (this.encodeDFUArrayActionResult!=null &&
+              this.encodeDFUArrayActionResult.equals(other.getEncodeDFUArrayActionResult())));
         __equalsCalc = null;
         return _equals;
     }
@@ -165,6 +246,15 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
                 }
             }
         }
+        if (getRemoveFromSuperfiles() != null) {
+            _hashCode += getRemoveFromSuperfiles().hashCode();
+        }
+        if (getRemoveRecursively() != null) {
+            _hashCode += getRemoveRecursively().hashCode();
+        }
+        if (getEncodeDFUArrayActionResult() != null) {
+            _hashCode += getEncodeDFUArrayActionResult().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -178,7 +268,7 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
         elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Type"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setXmlType(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "DFUArrayActions"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -203,6 +293,27 @@ public class DFUArrayActionRequest  implements java.io.Serializable {
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setItemQName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "Item"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("removeFromSuperfiles");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "removeFromSuperfiles"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("removeRecursively");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "removeRecursively"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("encodeDFUArrayActionResult");
+        elemField.setXmlName(new javax.xml.namespace.QName("urn:hpccsystems:ws:wsdfu", "encodeDFUArrayActionResult"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
 
