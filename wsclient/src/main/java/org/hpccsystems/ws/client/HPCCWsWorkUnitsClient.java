@@ -1197,7 +1197,7 @@ public class HPCCWsWorkUnitsClient extends DataSingleton
      * @throws Exception
      */
     public WUQueryResponse workUnitUQuery(String wuid, String jobname, String cluster, String type, String sortby,
-            String state, String endDate, String startDate, Long pageStartFrom, Long pageSize, Integer count, String owner, ApplicationValue[] applicationValues) throws Exception
+            String state, String endDate, String startDate, Long pageStartFrom, Long pageSize, Integer count, String owner, ApplicationValue[] applicationValues) throws ArrayOfEspException, Exception
     {
     	Long _pageSize = pageSize;
     	if(_pageSize == null)
@@ -1269,10 +1269,9 @@ public class HPCCWsWorkUnitsClient extends DataSingleton
         			fallbackresponse = fallBackWorkunitsServiceSoapProxy.WUQuery(internal);
     				if(fallbackresponse.getExceptions() != null)
     					throwWsWUExceptions(arrayofespexceptionsConvert(fallbackresponse.getExceptions()), "Error in WU query");
-    				for(org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit wu: fallbackresponse.getWorkunits())
-    				{
-    					workunit_set.add(wu);
-    				}
+    				if(fallbackresponse.getWorkunits() != null)
+    					for(org.hpccsystems.ws.client.gen.wsworkunits.v1_56.ECLWorkunit wu: fallbackresponse.getWorkunits())
+    						workunit_set.add(wu);
         		}
         		
         		// rebuild response as latest
@@ -1329,13 +1328,57 @@ public class HPCCWsWorkUnitsClient extends DataSingleton
      * @param appKey
      * @param appData
      * @return WUQueryResponse
-     * @throws Exception
+     * @throws ArrayOfEspException, Exception
      */
     @Deprecated public WUQueryResponse workUnitUQuery(String wuid, String jobname, String cluster, String type, String sortby,
-            String state, String endDate, String startDate, Long pageStartFrom, Long pageSize, Integer count, String owner, String appName, String appKey, String appData) throws Exception
+            String state, String endDate, String startDate, Long pageStartFrom, Long pageSize, Integer count, String owner, String appName, String appKey, String appData) throws ArrayOfEspException, Exception
     {
         ApplicationValue[] applicationValues = {new ApplicationValue(appKey,appName,appData)};
         return this.workUnitUQuery(wuid, jobname, cluster, type, sortby, state, endDate, startDate, pageStartFrom, pageSize, count, owner, applicationValues);
+    }
+    
+    /**
+     * This method queries for a list of active workunits
+     * 
+     * @param cluster
+     * @param owner
+     * @param applicationValues
+     * 
+     * @return WUQueryResponse
+     * @throws Exception 
+     */
+    public WUQueryResponse queryActiveWorkunits(String cluster, String owner, ApplicationValue[] applicationValues) throws ArrayOfEspException, Exception
+    {
+    	String[] states = {"running", "compiling", "blocked", "queued", "aborting"};
+    	
+    	WUQueryResponse response = new WUQueryResponse();
+    	response.setNumWUs(0);
+    	response.setWorkunits(new ECLWorkunit[0]);
+    	for(String state: states)
+    	{
+    		WUQueryResponse tmp = new WUQueryResponse();
+    		tmp = this.workUnitUQuery(null, null, cluster, null, null, state, null, null, null, null, null, owner, applicationValues);
+    		if(tmp.getWorkunits() != null)
+    		{
+    			response.setNumWUs(response.getWorkunits().length + tmp.getWorkunits().length);
+    		    ECLWorkunit[] wu = new ECLWorkunit[response.getWorkunits().length + tmp.getWorkunits().length];
+    		    System.arraycopy(response.getWorkunits(), 0, wu, 0, response.getWorkunits().length);
+    		    System.arraycopy(tmp.getWorkunits(), 0, wu, response.getWorkunits().length, tmp.getWorkunits().length);
+    		    response.setWorkunits(wu);
+    		}
+    	}
+        return response;
+    }
+    
+    /**
+     * Wrapper for queryActiveWorkunits without parameters
+     * 
+     * @return WUQueryResponse
+     * @throws Exception
+     */
+    public WUQueryResponse queryActiveWorkunits() throws ArrayOfEspException, Exception
+    {
+    	return this.queryActiveWorkunits(null, null, null);
     }
 
     /**
