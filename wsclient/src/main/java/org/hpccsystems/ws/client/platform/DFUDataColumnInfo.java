@@ -18,6 +18,7 @@ public class DFUDataColumnInfo extends DFUDataColumn
     private String                  xmlDefaultVal    = null;
     private String                  maxcount         = null;
     private String                  maxlength        = null;
+    private String					metadata		 = null;
 
     /**
      * Create a Data Column Info object from a axis-generated soap class DFUDataColumn
@@ -55,6 +56,7 @@ public class DFUDataColumnInfo extends DFUDataColumn
         sb.append("\tMaxcount:").append(this.getMaxcount()).append("\n");
         sb.append("\txpath:").append(this.getXpath()).append("\n");
         sb.append("\txmldefault:").append(this.getXmlDefaultVal()).append("\n");
+        sb.append("\tMetadata:").append(this.getMetadata()).append("\n");
         for (DFUDataColumnInfo col : this.getChildColumns())
         {
             sb.append("\n\t").append(col.getColumnLabel()).append(":").append(col.toString());
@@ -173,5 +175,14 @@ public class DFUDataColumnInfo extends DFUDataColumn
     {
         this.maxlength = maxlength;
     }
+    
+    public String getMetadata()
+    {
+    	return metadata;
+    }
 
+    public void setMetadata(String metadata)
+    {
+    	this.metadata = metadata;
+    }
 }

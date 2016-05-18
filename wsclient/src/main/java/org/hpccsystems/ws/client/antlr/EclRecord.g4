@@ -18,7 +18,7 @@ assign: value EQ value_list;
 assign_list: assign ( COMMA assign)*;
 
 eclfield_decl:
-     (eclfield_type eclfield_name (OCURLY opts CCURLY)?
+     (eclfield_type eclfield_name (OCURLY opts CCURLY)? (metadata)?
      | nested_dataset_decl
      | nested_inline_dataset_decl
      | eclfield_recref)
@@ -96,6 +96,12 @@ xmldefaultval:
     'XMLDEFAULT' OPAREN STRING CPAREN
 ;
 
+metadata:
+	('/*' AT 'METADATA' OPAREN UTOKEN CPAREN .*? '*/' |
+	'//' AT 'METADATA' OPAREN UTOKEN CPAREN)
+;
+
+
 OPAREN             : '(';
 CPAREN             : ')';
 OCURLY             : '{';
@@ -103,6 +109,7 @@ CCURLY             : '}';
 COMMA              : ',';
 SEMI               : ';';
 EQ                 : '=';
+AT				   : '@';
 
 ASSING_SYM             : ':=';
 REC_SYM                : 'RECORD';

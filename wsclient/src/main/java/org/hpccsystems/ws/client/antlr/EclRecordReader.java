@@ -336,7 +336,22 @@ public class EclRecordReader extends EclRecordBaseListener
             currentrec.setMaxRecLength(ctx.getChild(2).getText());
         }
     }
-
+    
+    /**
+     * {@inheritDoc}
+     * 
+     * <p>
+     * When entering a METADATA value, add its value to the current field or rec
+     * </p>
+     */
+    @Override
+    public void enterMetadata(EclRecordParser.MetadataContext ctx)
+    {
+    	if (currentfield != null)
+    	{
+    		currentfield.setMetadata(ctx.getChild(2).getText());
+    	}
+    }
     
     public ErrorListener getErrorHandler()
     {
