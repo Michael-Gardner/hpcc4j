@@ -52,6 +52,8 @@ import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WUSubmitResponse;
 import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WUSyntaxCheckECL;
 import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WUSyntaxCheckResponse;
 import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WUUpdateResponse;
+import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WUWaitCompiled;
+import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WUWaitResponse;
 import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WsWorkunitsServiceSoap;
 import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.WsWorkunitsServiceSoapProxy;
 import org.hpccsystems.ws.client.gen.wsworkunits.v1_62.ThorLogInfo;
@@ -1445,20 +1447,27 @@ public class HPCCWsWorkUnitsClient extends DataSingleton
             WUUpdateResponse wuUpdateResponse = wsWorkunitsServiceSoapProxy.WUCreateAndUpdate(wucreateparameters);
 
             ArrayOfEspException exceptions = wuUpdateResponse.getExceptions();
-            if (exceptions == null)
+            if (exceptions != null)
+        	    throwWsWUExceptions(exceptions, "Error compiling ECL query");
+            if (wuUpdateResponse.getWorkunit().getStateID() != 1) // not immediately in compiled state
             {
-                createdWU = new WorkunitInfo(wuUpdateResponse.getWorkunit());
-                createdWU.setMaxMonitorMillis(wu.getMaxMonitorMillis());
-                createdWU.setCluster(wu.getCluster());
-                createdWU.setJobname(wu.getJobname());
-                createdWU.setSleepMillis(wu.getSleepMillis());
-                createdWU.setOriginalEclWatchUrl(getEclWatchUrl());
+                WUWaitCompiled wuwaitcompiledparameters = new WUWaitCompiled();
+                wuwaitcompiledparameters.setWait(10); // seconds
+                wuwaitcompiledparameters.setWuid(wuUpdateResponse.getWorkunit().getWuid());
+                WUWaitResponse wuWaitResponse = wsWorkunitsServiceSoapProxy.WUWaitCompiled(wuwaitcompiledparameters);
+                exceptions = wuWaitResponse.getExceptions();
+                if (exceptions != null)
+                    throwWsWUExceptions(exceptions, "Error compiling ECL query");
+                if (wuWaitResponse.getStateID() != 1) // not in compiled state
+                    throw new Exception("Error: compilation exceeded timeout");
+            }
 
-            }
-            else
-            {
-                throwWsWUExceptions(exceptions, "Error compiling ECL query");
-            }
+            createdWU = new WorkunitInfo(wuUpdateResponse.getWorkunit());
+            createdWU.setMaxMonitorMillis(wu.getMaxMonitorMillis());
+            createdWU.setCluster(wu.getCluster());
+            createdWU.setJobname(wu.getJobname());
+            createdWU.setSleepMillis(wu.getSleepMillis());
+            createdWU.setOriginalEclWatchUrl(getEclWatchUrl());
         }
 
         return createdWU;
@@ -1466,6 +1475,7 @@ public class HPCCWsWorkUnitsClient extends DataSingleton
 
     /*
      * this method is purely for the Platform class
+     * no guarantee this will have compiled properly
      */
     public WUUpdateResponse createWUFromECL(String archiveOrEcl, int resultLimit, ApplicationValue[] appVals,
             String jobName, boolean compileOnly) throws Exception
