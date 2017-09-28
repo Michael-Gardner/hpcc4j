@@ -97,9 +97,9 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>axis</groupId>
-            <artifactId>axis</artifactId>
-            <version>1.4</version>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2</artifactId>
+            <version>1.7.6</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
