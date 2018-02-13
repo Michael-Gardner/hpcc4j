@@ -11,9 +11,13 @@ To utilize this library as a dependency in your own maven project, simply add th
 <dependency>
 	<groupId>org.hpccsystems</groupId>
 	<artifactId>wsclient</artifactId>
-	<version>1.0.0</version>
+	<version>1.2.4</version>
 </dependency>
 ```
+
+The current stable version of wsclient is: 1.2.4
+
+The current beta version available is: 2.0.0-SNAPSHOT
 
 #### Build
 This project is to be built using Maven. To build the projects using Maven, navigate to the base directory of the project and issue the following command:
@@ -38,10 +42,14 @@ wsclient | hpccsystems-platform
 --- | ---
 1.0.0 | 6.2.0
 1.2.0 | 6.4.0
+2.0.0 | 7.0.0
 
 #### Future Release
 
-###### 1.2.2 Target Release date 9/29/2017
+###### 2.0.0 Target release alongside HPCC-Platform 7.0.0
+- Interface compatibility with HPCC-Platform 7.0.0 in a version agnostic manner
+
+###### 1.2.2  Release date 9/29/2017
 - JAPI-79 Avoid premature submission of compiling WUs
 - JAPI-91 Fix COMPILING state map
 - JAPI-90 Added createOrUpdate function to HPCCWsAttributesClient
