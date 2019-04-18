@@ -29,6 +29,23 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <name>Ossrh Snapshot Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
@@ -74,17 +91,17 @@
                         <exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_46/**/*</exclude>
                         <!-- As of 7.2.0 v156, v158, v162, v169 required for backward compatibility -->
                         <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_56/**/*</exclude-->
-                        <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_58/**/*</exclude-->
-                        <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_62/**/*</exclude-->
-                        <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_69/**/*</exclude-->
-                        <exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_71/**/*</exclude>
-                        <exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_73/**/*</exclude>
-                    </excludes>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <groups>${test.groups}</groups>
-                    <excludedGroups>${test.exclude.groups}</excludedGroups>
-                </configuration>
+                    <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_58/**/*</exclude-->
+                <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_62/**/*</exclude-->
+            <!-- exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_69/**/*</exclude-->
+        <exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_71/**/*</exclude>
+        <exclude>org/hpccsystems/ws/client/gen/wsworkunits/v1_73/**/*</exclude>
+    </excludes>
+    <source>1.6</source>
+    <target>1.6</target>
+    <groups>${test.groups}</groups>
+    <excludedGroups>${test.exclude.groups}</excludedGroups>
+</configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -189,7 +206,7 @@
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.15</version>
                         <configuration>
-                        <argLine>${argLine}</argLine>
+                            <argLine>${argLine}</argLine>
                             <groups></groups>
                             <includes>
                                 <include>**/*.class</include>
