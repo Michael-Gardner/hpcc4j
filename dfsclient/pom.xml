@@ -145,6 +145,46 @@
 		</build>
 	</profile>
         <profile>
+            <id>jenkins-snapshot</id>
+            <build>
+                <plugins>
+				    <plugin>
+					    <groupId>org.apache.maven.plugins</groupId>
+					    <artifactId>maven-surefire-plugin</artifactId>
+					    <version>2.22.1</version>
+					    <dependencies>
+						    <dependency>
+							    <groupId>org.apache.maven.surefire</groupId>
+							    <artifactId>surefire-junit</artifactId>
+							    <version>2.6</version>
+						    </dependency>
+					    </dependencies>
+					    <configuration>
+						    <testFailureIgnore>false</testFailureIgnore>
+						    <forkMode>once</forkMode>
+						    <includes>
+							    <include>**/*.class</include>
+						    </includes>
+						    <excludedGroups>org.hpccsystems.dfs.client.RemoteTests</excludedGroups>
+					    </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>release</id>
             <build>
                 <plugins>
