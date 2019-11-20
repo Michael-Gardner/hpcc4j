@@ -46,7 +46,7 @@ fi
 
 update_version_file $NEW_SEQUENCE $POM_POINT
 POM_MATURITY=$NEW_SEQUENCE
-set_tag
+set_tag japi
 
 # Commit the change
 doit "git commit -s -a -m \"$HPCC_NAME $HPCC_SHORT_TAG Gold\""

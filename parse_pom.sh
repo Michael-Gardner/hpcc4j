@@ -88,8 +88,10 @@ function doit()
 function set_tag()
 {
     local _prefix=$1
-    local _maturity=$POM_MATURITY
-    HPCC_SHORT_TAG=$POM_MAJOR.$POM_MINOR.$POM_POINT-$_maturity
+    if [ -n "$POM_MATURITY" ] ; then
+      local _maturity=-$POM_MATURITY
+    fi
+    HPCC_SHORT_TAG=$POM_MAJOR.$POM_MINOR.$POM_POINT$_maturity
     HPCC_LONG_TAG=${_prefix}_$HPCC_SHORT_TAG
 }
 
@@ -103,7 +105,7 @@ function update_version_file()
       _new_minor=$POM_MINOR
     fi
     local _v="$POM_MAJOR.$_new_minor.$_new_point-$_new_maturity"
-    local mvn_version_update_cmd="mvn --batch-mode release:update-versions -DdevelopmentVersion=$_v"
+    local mvn_version_update_cmd="mvn versions:set -DnewVersion=$_v"
     if [ -n "$VERBOSE" ] ; then
       echo  "$mvn_version_update_cmd"
     fi
