@@ -72,7 +72,8 @@ GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 
 function parse_pom()
 {
-  POM_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -v -e '^\[')
+  POM_PROJECT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
+  POM_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
   POM_MAJOR=$(echo $POM_VERSION | awk 'BEGIN {FS="[.-]"}; {print $1};')
   POM_MINOR=$(echo $POM_VERSION | awk 'BEGIN {FS="[.-]"}; {print $2};')
   POM_POINT=$(echo $POM_VERSION | awk 'BEGIN {FS="[.-]"}; {print $3};')
@@ -87,12 +88,11 @@ function doit()
 
 function set_tag()
 {
-    local _prefix=$1
     if [ -n "$POM_MATURITY" ] ; then
       local _maturity=-$POM_MATURITY
     fi
     HPCC_SHORT_TAG=$POM_MAJOR.$POM_MINOR.$POM_POINT$_maturity
-    HPCC_LONG_TAG=${_prefix}_$HPCC_SHORT_TAG
+    HPCC_LONG_TAG=$POM_PROJECT_$HPCC_SHORT_TAG
 }
 
 function update_version_file()
@@ -118,7 +118,7 @@ function update_version_file()
 
 function do_tag()
 {
-    set_tag $f
+    set_tag
     if [ "$FORCE" = "-f" ] ; then
       doit "git tag -d $HPCC_LONG_TAG"
     fi

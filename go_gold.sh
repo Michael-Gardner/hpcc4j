@@ -53,4 +53,4 @@ doit "git commit -s -a -m \"$HPCC_NAME $HPCC_SHORT_TAG Gold\""
 doit "git push $REMOTE $GIT_BRANCH $FORCE"
 
 # tag it
-do_tag
+do_tag japi
