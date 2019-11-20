@@ -88,8 +88,8 @@ function doit()
 function set_tag()
 {
     local _prefix=$1
-    local _maturity=$HPCC_MATURITY
-    HPCC_SHORT_TAG=$HPCC_MAJOR.$HPCC_MINOR.$HPCC_POINT-$_maturity
+    local _maturity=$POM_MATURITY
+    HPCC_SHORT_TAG=$POM_MAJOR.$POM_MINOR.$POM_POINT-$_maturity
     HPCC_LONG_TAG=${_prefix}_$HPCC_SHORT_TAG
 }
 
@@ -108,9 +108,9 @@ function update_version_file()
       echo  "$mvn_version_update_cmd"
     fi
     if [ -z "$DRYRUN" ] ; then 
-      echo  "Update to $_v"
+      eval "$mvn_version_update_cmd"
     else
-      exec "$mvn_version_update_cmd"
+      echo  "Update to $_v"
     fi
 }
 

@@ -35,7 +35,7 @@ if [ "$GIT_BRANCH" != "candidate-$POM_MAJOR.$POM_MINOR.$POM_POINT" ]; then
   exit 2
 fi
 
-set_tag $f
+set_tag japi
 if [ $(git rev-parse HEAD) != $(git rev-parse $HPCC_LONG_TAG) ] ; then 
   if [ -z "$IGNORE" ] ; then
     git diff $HPCC_LONG_TAG
@@ -49,8 +49,7 @@ POM_MATURITY=$NEW_SEQUENCE
 set_tag
 
 # Commit the change
-doit "git add *$VERSIONFILE"
-doit "git commit -s -m \"$HPCC_NAME $HPCC_SHORT_TAG Gold\""
+doit "git commit -s -a -m \"$HPCC_NAME $HPCC_SHORT_TAG Gold\""
 doit "git push $REMOTE $GIT_BRANCH $FORCE"
 
 # tag it
