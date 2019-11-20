@@ -92,6 +92,7 @@ function set_tag()
       local _maturity=-$POM_MATURITY
     fi
     HPCC_SHORT_TAG=$POM_MAJOR.$POM_MINOR.$POM_POINT$_maturity
+    echo "POM_PROJECT=$POM_PROJECT"
     HPCC_LONG_TAG=$POM_PROJECT_$HPCC_SHORT_TAG
 }
 
