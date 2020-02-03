@@ -53,11 +53,12 @@ function parse_cmake()
 function set_tag()
 {
     local _prefix=$1
-    local _maturity=$HPCC_SEQUENCE
+    local _maturity=$HPCC_MATURITY
     if [ "$HPCC_MATURITY" == "rc" ] ; then
       _maturity=SNAPSHOT
     fi
-    HPCC_SHORT_TAG=${HPCC_MAJOR}.${HPCC_MINOR}.${HPCC_POINT}-${_maturity}
+    # will keep -release or -SNAPSHOT as maturity for tagging
+    HPCC_SHORT_TAG=${HPCC_MAJOR}.${HPCC_MINOR}.${HPCC_POINT}-${HPCC_SEQUENCE}-${_maturity}
     HPCC_LONG_TAG=${_prefix}_$HPCC_SHORT_TAG
 }
 
@@ -72,9 +73,12 @@ function update_version_file()
       _new_minor=$HPCC_MINOR
     fi
     if [ "$_new_maturity" == "rc" ]; then
-      _new_sequence=SNAPSHOT
+      _new_maturity=-SNAPSHOT
+    else
+      # don't set for non-snapshots
+      _new_maturity=
     fi
-    local _v="${HPCC_MAJOR}.${_new_minor}.${_new_point}-${_new_sequence}"
+    local _v="${HPCC_MAJOR}.${_new_minor}.${_new_point}-${_new_sequence}${_new_maturity}"
     local mvn_version_update_cmd="mvn versions:set -DnewVersion=$_v"
     if [ -n "$VERBOSE" ] ; then
       echo  "$mvn_version_update_cmd"
