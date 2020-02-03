@@ -22,7 +22,7 @@ fi
 
 
 # overwrite parse_cmake to target pom files
-# expect ex: 7.6.2-SNAPSHOT, 7.6.2-1 (gold release), etc
+# expect ex: 7.6.2-0-SNAPSHOT, 7.6.2-1 (gold release), etc
 # Major.Minor.Point- Sequence if gold, Maturity if rc
 function parse_cmake()
 {
@@ -32,13 +32,22 @@ function parse_cmake()
   HPCC_MINOR=$(echo $HPCC_VERSION | awk 'BEGIN {FS="[.-]"}; {print $2};')
   HPCC_POINT=$(echo $HPCC_VERSION | awk 'BEGIN {FS="[.-]"}; {print $3};')
   HPCC_SEQUENCE=$(echo $HPCC_VERSION | awk 'BEGIN {FS="[.-]"}; {print $4};')
+  HPCC_MATURITY=$(echo $HPCC_VERSION | awk 'BEGIN {FS="[.-]"}; {print $5};')
 
-  if `echo $HPCC_SEQUENCE | grep -Eq ^[0-9]+$`; then
-    # sequence set as integer, already gold release
+  if ! `echo $HPCC_SEQUENCE | grep -Eq ^[0-9]+$`; then
+    echo "Error: HPCC_SEQUENCE not an Integer"
+    echo "-- possibly on branch using old versioning scheme"
+    exit 2
+  fi
+
+  # translate pom maturity to what go_rc/go_gold understand
+  if [ -z "$HPCC_MATURITY" ] ; then
+    # branch on gold release
     HPCC_MATURITY=release
-  else
+  elif [ "$HPCC_MATURITY" == "SNAPSHOT" ] ; then
     HPCC_MATURITY=rc
   fi
+
 }
 
 function set_tag()
