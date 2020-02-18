@@ -79,6 +79,7 @@
       <id>jenkins</id>
       <properties>
         <maven.gpg.skip>false</maven.gpg.skip>
+        <sonatype.staging.autoReleaseAfterClose>true</sonatype.staging.autoReleaseAfterClose>
       </properties>
       <build>
         <plugins>
@@ -96,6 +97,9 @@
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>${sonatype.staging.version}</version>
+            <configuration>
+              <autoReleaseAfterClose>${sonatype.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
+            </configuration>
           </plugin>
           <plugin>
             <artifactId>maven-surefire-plugin</artifactId>

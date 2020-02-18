@@ -35,6 +35,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.assembly.version>3.1.1</maven.assembly.version>
     <sonatype.staging.version>1.6.7</sonatype.staging.version>
+    <sonatype.staging.autoReleaseAfterClose>false</sonatype.staging.autoReleaseAfterClose>
     <maven.gpg.version>1.6</maven.gpg.version>
     <maven.gpg.skip>true</maven.gpg.skip>
     <maven.javadoc.version>3.1.0</maven.javadoc.version>
@@ -189,7 +190,7 @@
           <configuration>
             <serverId>ossrh</serverId>
             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-            <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            <autoReleaseAfterClose>${sonatype.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
           </configuration>
         </plugin>
         <plugin>
@@ -357,6 +358,7 @@
       <properties>
         <maven.test.skip>true</maven.test.skip>
         <maven.gpg.skip>false</maven.gpg.skip>
+        <sonatype.staging.autoReleaseAfterClose>true</sonatype.staging.autoReleaseAfterClose>
       </properties>
       <build>
         <plugins>
@@ -377,6 +379,9 @@
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>${sonatype.staging.version}</version>
+            <configuration>
+              <autoReleaseAfterClose>${sonatype.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
+            </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>

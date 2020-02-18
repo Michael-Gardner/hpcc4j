@@ -107,6 +107,7 @@
       <properties>
         <surefire.excludedGroups />
         <maven.gpg.skip>true</maven.gpg.skip>
+        <sonatype.staging.autoReleaseAfterClose>true</sonatype.staging.autoReleaseAfterClose>
       </properties>
       <build>
         <plugins>
@@ -124,6 +125,9 @@
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>${sonatype.staging.version}</version>
+            <configuration>
+              <autoReleaseAfterClose>${sonatype.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
+            </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
