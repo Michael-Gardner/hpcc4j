@@ -31,6 +31,7 @@ if(NOT DOC_VERSION)
 		message(FATAL_ERROR "error fetching version, please set manually")
 	endif()
 	string(STRIP "${version}" version)
+	message(STATUS "version is ${version}")
 	execute_process(
 	COMMAND "grep" "-m 1" "<version>" "${CMAKE_CURRENT_SOURCE_DIR}/../pom.xml"
 	COMMAND "sed" "s/[ ]*<version>[0-9]*.[0-9]*.[0-9]*-//"
@@ -43,7 +44,24 @@ if(NOT DOC_VERSION)
 		set(stagever "0")
 	endif()
 	string(STRIP "${stagever}" stagever)
+	message(STATUS "stagever is ${stagever}")
     set(DOC_VERSION "${version}")
+else()
+	set(version "${DOC_VERSION}")
+	string(STRIP "${version}" version)
+	execute_process(
+	COMMAND "grep" "-m 1" "<version>" "${CMAKE_CURRENT_SOURCE_DIR}/../pom.xml"
+	COMMAND "sed" "s/[ ]*<version>[0-9]*.[0-9]*.[0-9]*-//"
+	COMMAND "sed" "s/[-][^0-9]*<\\/version>$//"
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+	OUTPUT_VARIABLE stagever
+	RESULT_VARIABLE stagever_rv
+	)
+	if("${stagever_rv}" GREATER "0")
+		set(stagever "0")
+	endif()
+	string(STRIP "${stagever}" stagever)
+	message(STATUS "stagever is ${stagever}")
 endif()
 message("Building doc version: ${DOC_VERSION}")
 define_property(GLOBAL PROPERTY DOC_TARGETS BRIEF_DOCS "docs" FULL_DOCS "docs")
