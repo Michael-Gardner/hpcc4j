@@ -1117,8 +1117,8 @@ public class HPCCWsDFUClient extends BaseHPCCWsClient
      * @param pageStartFrom
      *            - the location to search from
      * @return - collection of files matching the logicalfilename passed in
-     * @throws Exception
-     * @throws ArrayOfEspExceptionWrapper
+     * @throws Exception general exception
+     * @throws ArrayOfEspExceptionWrapper array of esp exception wrapper
      */
     public List<DFULogicalFileWrapper> searchFiles(String logicalFilename, String cluster, Integer pagesize, Integer pageStartFrom) throws Exception, ArrayOfEspExceptionWrapper
     {

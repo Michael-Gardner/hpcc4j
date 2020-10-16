@@ -1952,11 +1952,11 @@ public class HPCCFileSprayClient extends BaseHPCCWsClient
      *          - The net address of the dropzone
      * @param path
      *          - The full path to the dropzone on the filesystem ie /var/lib/HPCCSystems/mydropzone
-     * @param {string} [os]
+     * @param os
      *          - The os
-     * @return
-     * @throws RemoteException
-     * @throws EspSoapFault
+     * @return response from dfu workunit
+     * @throws RemoteException remote exception
+     * @throws EspSoapFault esp soap exception
      */
     public DFUWorkunitsActionResponseWrapper deleteDropZoneFiles(String dropzoneName, List<String> fileNames, String netAddress, String path, String os) throws Exception
     {
