@@ -1,0 +1,20 @@
+name: hpcc4j Nightly Test Suite
+
+on: workflow_dispatch
+
+jobs:
+  test-against-platform:
+    runs-on: ubuntu-latest
+    
+    services:
+      hpccsystems:
+        image: hpccsystems/platform
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Build with Maven
+      run: mvn -B --activate-profiles jenkins-on-demand -Dgpg.skip=true install
