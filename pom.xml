@@ -500,8 +500,12 @@
       </properties>
       <!-- Needed for access to jfrog servers given github stored secrets -->
       <distributionManagement>
-        <snapshotRepository>
+        <repository>
           <id>jfrog</id>
+          <url>${env.JFROG_URL}/artifactory/${env.JFROG_REPOSITORY}</url>
+        </repository>
+        <snapshotRepository>
+          <id>jfrog-snapshot</id>
           <url>${env.JFROG_URL}/artifactory/${env.JFROG_SNAPSHOT_REPOSITORY}</url>
         </snapshotRepository>
       </distributionManagement>

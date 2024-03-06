@@ -46,3 +46,4 @@ jobs:
           JFROG_GPG_PASSPHRASE: ${{ secrets.SIGN_MODULES_PASSPHRASE }}
           JFROG_URL: https://useast.jfrog.lexisnexisrisk.com
           JFROG_SNAPSHOT_REPOSITORY: hpccpl-maven-snapshot-virtual
+          JFROG_REPOSITORY: hpccpl-maven-virtual
